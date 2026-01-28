@@ -4,7 +4,7 @@ local newcclosure = newcclosure or clonefunction;
 local executor = (identifyexecutor and select(2, pcall(identifyexecutor))) and identifyexecutor() or "Your executor";
 
 if not (hookfunction and require) then
-    return error(executor .. " is missing " .. (hookfunction and "hookfunction " or "") .. (require and "require" or ""));
+    return error(executor .. " is missing " .. (not hookfunction and "hookfunction " or "") .. (not require and "require" or ""));
 end;
 
 local RS: ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
