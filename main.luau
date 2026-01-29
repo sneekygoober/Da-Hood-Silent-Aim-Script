@@ -15,7 +15,7 @@ local cam = workspace.CurrentCamera;
 
 local mouse = plr:GetMouse();
 
-local s, GunHandler = pcall(require, cloneref(RS.Modules.GunHandler));
+local s, GunHandler = pcall(require, RS.Modules.GunHandler);
 if not s then
     return warn(executor .. " returned an error while trying to require RS.Modules.GunHandler:\n" .. GunHandler);
 end;
