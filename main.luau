@@ -51,9 +51,7 @@ local getTarget = function()
     local cPart, cDistance = nil, math.huge;
 
     for _, char: Model in next, Chars:GetChildren() do
-        if char == plr.Character then continue; end;
-
-        if (char:FindFirstChild("BodyEffects") and char.BodyEffects["K.O"].Value) or char:FindFirstChildOfClass("ForceField") then continue; end;
+        if char == plr.Character or (char:FindFirstChild("BodyEffects") and char.BodyEffects["K.O"].Value) or char:FindFirstChildOfClass("ForceField") then continue; end;
 
         local tPart: BasePart = char:FindFirstChild("Head") or char.PrimaryPart or char:FindFirstChild("HumanoidRootPart");
         if not tPart then continue; end;
