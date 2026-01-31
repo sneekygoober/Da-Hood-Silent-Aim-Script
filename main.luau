@@ -1,3 +1,5 @@
+if not game:IsLoaded() then game.Loaded:Wait(); end;
+
 local cloneref = cloneref or function(i: Instance) return i; end;
 local clonefunction = clonefunction or function(f: (...any) -> (...any)) return f; end;
 local newcclosure = newcclosure or clonefunction;
