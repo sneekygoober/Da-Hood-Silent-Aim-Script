@@ -12,7 +12,7 @@ end;
 local RS: ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
 local Players = game:GetService("Players");
 
-local plr = Players.LocalPlayer;
+local plr: Player = cloneref(Players).LocalPlayer;
 local cam = workspace.CurrentCamera;
 
 local mouse = plr:GetMouse();
@@ -62,7 +62,10 @@ local getTarget = function()
         if not onScreen then continue; end;
 
         local v, nTPart = isVisible(tPart);
-        if not v then continue; end;
+        if not v then 
+            v, nTPart = isVisible(char.PrimaryPart or char:FindFirstChild("HumanoidRootPart"));
+            if not v then continue; end;
+        end;
 
         if nTPart then tPart = nTPart; end;
 
