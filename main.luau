@@ -80,12 +80,12 @@ local getTarget = function()
 end;
 
 local old; old = clonefunction(hookfunction(GunHandler.shoot, newcclosure(function(args)
-    if args["Shooter"] == plr.Character then
+    if rawget(args, "Shooter") == plr.Character then
         local _args = args;
         local c = getTarget();
         if c then
             _args["AimPosition"] = c.Position;
-            if rawget(_args, "Hit") then
+            if _args["Hit"] then
                 _args.Hit = c;
             end;
             return old(_args);
