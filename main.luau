@@ -79,7 +79,7 @@ local getTarget = function()
     return cPart;
 end;
 
-local old; old = clonefunction(hookfunction(GunHandler.shoot, newcclosure(function(args)
+local old; old = clonefunction(hookfunction(rawget(GunHandler, "shoot"), newcclosure(function(args)
     if rawget(args, "Shooter") == plr.Character then
         local _args = args;
         local c = getTarget();
