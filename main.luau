@@ -27,7 +27,9 @@ end;
 
 local Chars: Folder = workspace:FindFirstChild("Players");
 if not Chars then
-    return warn("Script needs updating");
+    local err = "Script needs updating";
+    SG["error"](err);
+    return warn(err);
 end;
 
 local isVisible = function(part: BasePart): (boolean, Instance?)
