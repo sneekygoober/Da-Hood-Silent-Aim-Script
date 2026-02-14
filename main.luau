@@ -34,7 +34,7 @@ end;
 
 local isVisible = function(part: BasePart): (boolean, Instance?)
     local char = plr.Character;
-    if not char then return false, nil; end;
+    if not (char and part) then return false, nil; end;
 
     local rp = RaycastParams.new();
     rp.FilterType = Enum.RaycastFilterType.Exclude;
