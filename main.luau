@@ -98,4 +98,4 @@ local old; old = clonefunction(hookfunction(rawget(GunHandler, "shoot"), newcclo
     return old(args);
 end)));
 
-SG["success"]("Script successfully executed!\nIf you have any issues press F9 or type /console in chat and then send me a screenshot of the console.");
+SG["success"]("Silent aim successfully executed!\nIf you have any issues press F9 or type /console in chat and then send me a screenshot of the console.");
